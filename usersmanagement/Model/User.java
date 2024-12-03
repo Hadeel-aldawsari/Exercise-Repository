@@ -31,11 +31,7 @@ public class User {
     private String username;
 
     @NotEmpty(message = "password should not be empty")
-//    @Pattern(regexp ="(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[!@#&()–{}:;',?/*~$^+=<>]).{8,20}$",message ="Password must contain at least one digit [0-9].\n" +
-//            "Password must contain at least one lowercase Latin character [a-z].\n" +
-//            "Password must contain at least one uppercase Latin character [A-Z].\n" +
-//            "Password must contain at least one special character like ! @ # & ( ).\n" +
-//            "Password must contain a length of at least 8 characters and a maximum of 20 characters." )
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()]).{8,20}$", message = "Password must be between 8 and 20 characters long, and include at least one digit, one lowercase letter, one uppercase letter, and one special character (!@#&()).")
     @Column(columnDefinition ="varchar(20) not null")
     private String password;
 
